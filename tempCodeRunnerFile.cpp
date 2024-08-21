@@ -8,6 +8,7 @@ bool isprime(int n){
             return false;
         }
     }
+    return true;
 }
 int main(){
     bool x = isprime(7);
