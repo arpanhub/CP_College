@@ -13,4 +13,6 @@ int fermatFactors(int n) {
     }
     return x - y;
 }
+int main(){
 cout << fermatFactors(15) << endl; // 5, 3
+}
