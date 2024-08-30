@@ -31,7 +31,7 @@ bool isprime(int n){
     return true;
 }
 int main(){
-    bool x = isprime(7);
+    bool x = isprime(77777777);
     if(x) cout<<"prime";
     else cout<<"not prime";
 }
@@ -40,3 +40,30 @@ int main(){
 // 2. if a number is not prime then it will have a factor less than or equal to sqrt(n) so we are checking till sqrt(n) only
 // 3. if a number is not prime then it will have a factor less than or equal to sqrt(n) so we are checking till sqrt(n) only
 // 4. we are checking for 2 and 3 separately because we are checking for i+2 in the loop so we are checking for 2 and 3 separately
+
+// check the prime number using fermats theoram
+//Prove that fermat little theorem does not hold for p = 6 and a = 2 ?
+#include <iostream>
+using namespace std;
+
+int powerMod(int a, int n, int p)
+{
+    int res = 1;
+    for (int i = 0; i < n; i++)
+        res = (res * a) % p;
+    return res;
+}
+
+int main()
+{
+    int a = 2;
+    int p = 6;
+    int result = powerMod(a, p - 1, p);
+    cout << "2^(" << p - 1 << ") mod " << p << " = " << result << endl;
+    if (result == 1)
+        cout << "Fermat's Little Theorem holds for p = " << p << " and a = " << a << endl;
+    else
+        cout << "Fermat's Little Theorem does not hold for p = " << p << " and a = " << a << endl;
+    return 0;
+}
+
